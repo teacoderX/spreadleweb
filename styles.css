@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+/* Define different colors for the music text */
+#dynamicText2.color1 {
+    color: black; /* Change this to your first color */
+}
+
+#dynamicText2.color2 {
+    color: yellow; /* Change this to your second color */
+}
+
+#dynamicText2.color3 {
+    color: blueviolet; /* Change this to your third color */
+}
+
+#dynamicText2.color4 {
+    color: orange; /* Change this to your fourth color */
+}
+#dynamicText2.color5 {
+    color: black; /* Change this to your fourth color */
+}
+
+
+
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --switch-on: 1;
+    --switch-off: 0;
+    --list-color: #fff;
+}
+
+p {
+    font-weight: 300;
+}
+
+body {
+    min-height: 1000px;
+    background-color: var(--bg-color);
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    background-size: cover;
+}
+
+.banner .content {
+    max-width: 900px;
+    text-align: left;
+}
+
+.banner .content h2 {
+    font-size: 35px;
+}
+
+.banner .content p {
+    font-size: 20px;
+}
+
+.button {
+    font-size: 20px;
+    background: #ff0157;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header .logo {
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--text-color); /* Added color property */
+}
+
+header .logo span {
+    color: var(--text-color);
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    font-weight: 300;
+    color: var(--text-color); /* Added color property */
+}
+
+header.sticky {
+    background-color: #03a04a;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+header.sticky .logo {
+    color: var(--bg-color);
+}
+
+header.sticky .logo span {
+    color: var(--text-color);
+}
+
+header.sticky .navigation li a {
+    text-decoration: none;
+    color: var(--list-color);
+}
+
+header.sticky .navigation li a:hover {
+    color: var(--bg-color);
+}
+
+.title h2 {
+    font-size: 35px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.menuToggle {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    header,
+    header.sticky {
+        padding: 10px 20px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation li {
+        margin-left: 0;
+    }
+
+    header .navigation li a {
+        font-size: 1.6em;
+        font-weight: 300;
+    }
+
+    header.sticky .navigation li a:hover {
+        color: green;
+    }
+
+    header .navigation.active {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: var(--bg-color);
+    }
+
+    header .navigation li {
+        margin-left: 0;
+    }
+
+    header .navigation li a:hover {
+        color: green;
+    }
+
+    .menuToggle {
+        position: relative;
+        display: list-item;
+        list-style: none;
+        width: 40px;
+        height: 40px;
+        background: url(menu.png);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+
+    .menuToggle.active {
+        background: url(close.png);
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    header.sticky .menuToggle.active {
+        filter: invert(0);
+    }
+
+    header.sticky .menuToggle {
+        filter: invert(var(--switch-on));
+    }
+
+    header .menuToggle {
+        filter: invert(var(--switch-off));
+    }
+
+    section {
+        position: relative;
+        margin-top: 10%;
+        padding: 8%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
